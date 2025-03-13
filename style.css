@@ -1,119 +1,117 @@
-/* Standard-Einstellungen */
+/* Farbschema (angelehnt an dein Logo) */
+:root {
+    --color-white: #FEFEFE;
+    --color-orange: #EA8D23;
+    --color-red-orange: #E46A27;
+    --color-red: #E74727;
+    --color-deep-red: #DA4122;
+    --color-dark-brown: #381C04;
+    --color-black: #000000;
+    --color-bg-gradient: linear-gradient(135deg, #323232, #1E1E1E);
+}
+
+/* Grundlayout für die mobile Version */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: var(--color-bg-gradient);
+    font-family: Arial, sans-serif;
     text-align: center;
+    color: var(--color-white);
 }
 
-/* ----- Desktop-Version ----- */
-.desktop {
-    display: block;
-    padding: 50px;
-}
-
-.desktop header {
-    background: linear-gradient(135deg, #ff7b00, #ff3c00);
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-}
-
-.desktop .content {
-    margin-top: 30px;
-}
-
-.desktop .menu-button {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #ff7b00, #ff3c00);
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.desktop .menu-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* ----- Mobile-Version ----- */
-.mobile {
-    display: none;
-    padding: 20px;
+.mobile-container {
+    padding: 5vw;
 }
 
 /* Logo */
 .logo-container {
-    text-align: center;
-    margin-top: 30px;
+    margin-top: 5vw;
 }
 
 .logo-container img {
-    width: 70%;
-    max-width: 280px;
+    width: 80vw;        /* Skaliert relativ zur Bildschirmbreite */
+    max-width: 300px;    /* Begrenzung für größere Geräte */
     height: auto;
 }
 
-/* Pfeile + Text */
-.menu-section {
-    text-align: center;
-    margin-top: 40px;
+/* Downloadbereich für die Speisekarte */
+.download-section {
+    margin-top: 8vw;
 }
 
-.menu-text {
-    font-size: 22px;
+.download-text {
+    font-size: clamp(18px, 4vw, 26px);
     font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    animation: bounce 1.5s infinite;
+    margin-bottom: 4vw;
+    animation: subtleBounce 2s infinite;
+    color: var(--color-white);
 }
 
 .arrow {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
+    font-size: clamp(20px, 4vw, 28px);
+    color: var(--color-white);
 }
 
-/* Animierter Text + Pfeile */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
+@keyframes subtleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
 }
 
-/* Speisekarten-Button */
-.menu-button {
+.download-button {
     display: inline-block;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 4vw 8vw;
+    font-size: clamp(16px, 4vw, 22px);
     font-weight: bold;
     text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #ff7b00, #ff3c00);
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-orange), var(--color-red));
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.menu-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.download-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design: Umschalten zwischen Desktop und Mobile */
-@media (max-width: 1023px) {
-    .desktop {
-        display: none;
-    }
-    .mobile {
-        display: block;
-    }
+/* Einheitliche Sektionen (Öffnungszeiten, Standort, Kontakt) */
+.section {
+    margin-top: 8vw;
+    padding: 4vw;
+    background-color: rgba(255, 255, 255, 0.1); /* Halbtransparenter Overlay-Effekt */
+    border: 1px solid var(--color-red-orange);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.section-title {
+    font-size: clamp(20px, 4vw, 28px);
+    color: var(--color-red);
+    margin-bottom: 2vw;
+}
+
+.section-content {
+    font-size: clamp(14px, 3.5vw, 20px);
+    margin: 1vw 0;
+    color: var(--color-white);
+}
+
+.section-content a {
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+/* Google Maps Styling */
+.map-container {
+    margin-top: 4vw;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 250px; /* Für mobile Geräte angepasst */
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }

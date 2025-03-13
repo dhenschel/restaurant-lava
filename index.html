@@ -3,37 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant</title>
+  <title>Restaurant Mobile</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Desktop-Version -->
-<div class="desktop">
-  <header>
-    <h1>Willkommen im Restaurant (Desktop-Version)</h1>
-  </header>
-  <div class="content">
-    <p>Hier findest du unsere Speisekarte, die Anfahrt und Kontaktinformationen.</p>
-    <a href="Speisekarte.pdf" class="menu-button" download>📜 Speisekarte herunterladen</a>
-  </div>
-</div>
-
-<!-- Mobile-Version -->
-<div class="mobile">
+<div class="mobile-container">
+  <!-- Logo -->
   <div class="logo-container">
     <img src="images/logo.png" alt="Restaurant Logo">
   </div>
 
-  <div class="menu-section">
-    <p class="menu-text">
+  <!-- Downloadbereich Speisekarte -->
+  <div class="download-section">
+    <p class="download-text">
       <span class="arrow">▼</span> Hier geht es zur Speisekarte <span class="arrow">▼</span>
     </p>
-    <a href=Speisekarte.pdf" class="menu-button" download>
-      📜 Speisekarte herunterladen
+    <a href="Speisekarte.pdf" class="download-button" download>
+      Speisekarte herunterladen
     </a>
   </div>
-</div>
 
+  <!-- Öffnungszeiten -->
+  <div class="section">
+    <h2 class="section-title">Öffnungszeiten</h2>
+    <p class="section-content">Montag - Freitag: 11:30 - 22:00 Uhr</p>
+    <p class="section-content">Samstag - Sonntag: 12:00 - 23:30 Uhr</p>
+  </div>
+
+  <!-- Standort (Google Maps) -->
+  <div class="section">
+    <h2 class="section-title">Standort</h2>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d153866.52371658306!2d12.657584073614869!3d52.94546424459406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93dacfb7cfdcf%3A0xa98aa262f355fd67!2sNeuruppin!5e0!3m2!1sde!2sde!4v1741902034795!5m2!1sde!2sde"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Kontakt -->
+  <div class="section">
+    <h2 class="section-title">Kontakt</h2>
+    <p class="section-content">Adresse: Musterstraße 123, 12345 Musterstadt</p>
+    <p class="section-content">Telefon: <a href="tel:+491234567890">+49 123 456 7890</a></p>
+    <p class="section-content">E-Mail: <a href="mailto:info@restaurant.de">info@restaurant.de</a></p>
+  </div>
+</div>
 </body>
 </html>

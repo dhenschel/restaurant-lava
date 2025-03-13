@@ -1,0 +1,18 @@
+/* Standard-Styling für das Logo */
+.logo-container {
+    text-align: center;  /* Zentriert das Logo horizontal */
+    margin-top: 20px;    /* Abstand nach oben */
+}
+
+.logo-container img {
+    width: 80%;  /* Passt das Logo an die Bildschirmgröße an */
+    max-width: 300px; /* Begrenzung für größere Bildschirme */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+}
+
+/* Spezielle Anpassung für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    .logo-container img {
+        width: 90%;  /* Größere Skalierung für kleine Screens */
+    }
+}

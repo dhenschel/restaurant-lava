@@ -38,6 +38,18 @@ body {
     height: auto;
 }
 
+/* Willkommenstext */
+.welcome-text {
+    margin-top: 8vw;
+    margin-bottom: 12vw;
+}
+
+.welcome-text p {
+    font-size: clamp(20px, 4.5vw, 30px);
+    color: var(--color-white);
+    margin: 0;
+}
+
 /* Downloadbereich für die Speisekarte */
 .download-section {
     margin-top: 8vw;
@@ -86,7 +98,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1); /* Halbtransparenter Overlay-Effekt */
     border: 1px solid var(--color-red-orange);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .section-title {
@@ -104,6 +116,11 @@ body {
 .section-content a {
     color: var(--color-orange);
     text-decoration: none;
+}
+
+/* Zusätzliche Regel für die Adresse im Standort */
+.address-placeholder {
+    margin-bottom: 2vw;
 }
 
 /* Google Maps Styling */
@@ -149,4 +166,3 @@ body {
     color: var(--color-red);
     text-decoration: underline;
 }
-

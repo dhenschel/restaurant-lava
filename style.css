@@ -1,20 +1,26 @@
-/* Farbschema (angelehnt an dein Logo) */
+/* ============================= */
+/* Farbpalette aus dem Logo     */
+/* ============================= */
 :root {
-    --color-white: #FEFEFE;
-    --color-orange: #EA8D23;
-    --color-red-orange: #E46A27;
-    --color-red: #E74727;
-    --color-deep-red: #DA4122;
-    --color-dark-brown: #381C04;
-    --color-black: #000000;
-    --color-bg-gradient: linear-gradient(135deg, #323232, #1E1E1E);
+    --color-white:       #FEFEFE;
+    --color-cream:       #F3E1AB;
+    --color-orange:      #EA8D23;
+    --color-red-orange:  #E46A27;
+    --color-red: #e15f42;
+    --color-deep-red:    #DA4122;
+    --color-dark-brown:  #381C04;
+    --color-black:       #000000;
+
+    --color-bg-gradient: linear-gradient(135deg, var(--color-dark-brown), var(--color-red-orange));
 }
 
-/* Grundlayout für die mobile Version */
+/* ============================= */
+/* Grundlayout                  */
+/* ============================= */
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-bg-gradient);  /* Fallback-Hintergrundfarbe */
+    background-color: var(--color-dark-brown);     /* Fallback */
     background-image: url('images/schiefer.jpg');
     background-repeat: repeat;
     background-position: center;
@@ -27,18 +33,22 @@ body {
     padding: 5vw;
 }
 
-/* Logo */
+/* ============================= */
+/* Logo                         */
+/* ============================= */
 .logo-container {
     margin-top: 5vw;
 }
 
 .logo-container img {
-    width: 80vw;        /* Skaliert relativ zur Bildschirmbreite */
-    max-width: 300px;    /* Begrenzung für größere Geräte */
+    width: 80vw;
+    max-width: 300px;
     height: auto;
 }
 
-/* Willkommenstext */
+/* ============================= */
+/* Willkommenstext              */
+/* ============================= */
 .welcome-text {
     margin-top: 8vw;
     margin-bottom: 12vw;
@@ -46,11 +56,13 @@ body {
 
 .welcome-text p {
     font-size: clamp(20px, 4.5vw, 30px);
-    color: var(--color-white);
+    color: var(--color-cream);
     margin: 0;
 }
 
-/* Downloadbereich für die Speisekarte */
+/* ============================= */
+/* Speisekarten-Download        */
+/* ============================= */
 .download-section {
     margin-top: 8vw;
 }
@@ -80,7 +92,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: var(--color-white);
-    background: linear-gradient(135deg, var(--color-orange), var(--color-red));
+    background: var(--color-red);
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -88,22 +100,25 @@ body {
 
 .download-button:hover {
     transform: scale(1.05);
+    background: var(--color-deep-red);;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
-/* Einheitliche Sektionen (Öffnungszeiten, Standort, Kontakt) */
+/* ============================= */
+/* Sektionen                    */
+/* ============================= */
 .section {
     margin-top: 8vw;
     padding: 4vw;
-    background-color: rgba(255, 255, 255, 0.1); /* Halbtransparenter Overlay-Effekt */
-    border: 1px solid var(--color-red-orange);
+    background-color: rgba(255, 255, 255, 0.08); /* Leicht transparenter Bereich */
+    border: 1px solid var(--color-cream);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .section-title {
     font-size: clamp(20px, 4vw, 28px);
-    color: var(--color-red);
+    color: var(--color-cream);
     margin-bottom: 2vw;
 }
 
@@ -118,33 +133,42 @@ body {
     text-decoration: none;
 }
 
-/* Zusätzliche Regel für die Adresse im Standort */
+.section-content a:hover {
+    color: var(--color-red);
+    text-decoration: underline;
+}
+
+/* Standort-Zusatz (Adresse über Karte) */
 .address-placeholder {
     margin-bottom: 2vw;
 }
 
-/* Google Maps Styling */
+/* ============================= */
+/* Google Maps                  */
+/* ============================= */
 .map-container {
     margin-top: 4vw;
 }
 
 .map-container iframe {
     width: 100%;
-    height: 250px; /* Für mobile Geräte angepasst */
+    height: 250px;
     border: 0;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Fußzeile (Footer) Styling */
+/* ============================= */
+/* Footer                       */
+/* ============================= */
 .site-footer {
-    background-color: #1E1E1E; /* Dunkler Hintergrund */
-    color: #CCC;               /* Helle Schriftfarbe */
+    background-color: #1E1E1E;
+    color: var(--color-cream);
     padding: 3vw 5vw;
     font-size: clamp(12px, 3vw, 16px);
     text-align: center;
     margin-top: 8vw;
-    border-top: 1px solid var(--color-red-orange); /* Akzentfarbe */
+    border-top: 1px solid var(--color-red-orange);
 }
 
 .footer-container {

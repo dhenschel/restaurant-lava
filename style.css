@@ -3,12 +3,13 @@
 /* ============================= */
 :root {
     --color-white:       #FEFEFE;
-    --color-cream:       #F3E1AB;
+    --color-cream:       #fff1cc;
+    --color-cream2:      #fbf1d8;
     --color-orange:      #EA8D23;
     --color-red-orange:  #E46A27;
-    --color-red: #e15f42;
-    --color-deep-red:    #DA4122;
-    --color-dark-brown:  #381C04;
+    --color-red:         #993632;
+    --color-deep-red:    #3a1314;
+    --color-dark-brown:  #301011;
     --color-black:       #000000;
 
     --color-bg-gradient: linear-gradient(135deg, var(--color-dark-brown), var(--color-red-orange));
@@ -21,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-dark-brown);     /* Fallback */
-    background-image: url('images/schiefer.jpg');
+    background-image: url('images/website_background_tile_1024.webp');
     background-repeat: repeat;
     background-position: center;
     font-family: Arial, sans-serif;
@@ -162,7 +163,7 @@ body {
 /* Footer                       */
 /* ============================= */
 .site-footer {
-    background-color: #1E1E1E;
+    background-color: var(--color-dark-brown);
     color: var(--color-cream);
     padding: 3vw 5vw;
     font-size: clamp(12px, 3vw, 16px);

@@ -4,23 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Lava</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+
+<!-- Desktop-Version -->
+<div class="desktop-container">
+  <div class="desktop-nav-wrapper">
+    <nav class="desktop-nav">
+      <ul>
+        <li class="active" data-tab="home">Home</li>
+        <li data-tab="menu">Speisekarte</li>
+        <li data-tab="hours">Öffnungszeiten</li>
+        <li data-tab="location">Standort</li>
+        <li data-tab="contact">Kontakt</li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Home Tab -->
+  <section id="home" class="desktop-tab-content active">
+    <div class="logo-container desktop-logo">
+      <img src="images/logo.png" alt="Restaurant Logo">
+    </div>
+    <div class="desktop-welcome">
+      <h1>Herzlich willkommen bei Restaurant Lava!</h1>
+      <p>Tauchen Sie ein in unsere exklusive kulinarische Welt, wo liebevoll zubereitete Speisen und gemütliches Ambiente auf Sie warten. Lassen Sie sich von unseren kreativen Gerichten begeistern und genießen Sie einen unvergesslichen Aufenthalt!</p>
+    </div>
+  </section>
+
+  <!-- Speisekarte Tab -->
+  <section id="menu" class="desktop-tab-content">
+    <div class="download-section">
+      <p class="download-text">
+        <span class="arrow">▼</span> Hier geht es zur Speisekarte <span class="arrow">▼</span>
+      </p>
+      <a href="Speisekarte-LAVA.pdf" class="download-button" download>
+        Speisekarte herunterladen
+      </a>
+    </div>
+  </section>
+
+  <!-- Öffnungszeiten Tab -->
+  <section id="hours" class="desktop-tab-content">
+    <div class="box">
+      <p><strong>Montag, Mittwoch – Sonntag:</strong> 11:30 – 14:30 &amp; 17:00 – 21:30 Uhr</p>
+      <p><strong>Dienstag:</strong> Ruhetag</p>
+    </div>
+  </section>
+
+  <!-- Standort Tab -->
+  <section id="location" class="desktop-tab-content">
+    <div class="box">
+      <p>Regattastr. 14, 16816 Neuruppin</p>
+      <div class="map-container-desktop">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt Tab -->
+  <section id="contact" class="desktop-tab-content">
+    <div class="box">
+      <p>Adresse: Regattastr. 14, 16816 Neuruppin</p>
+      <p>Telefon: <a href="tel:03391/3469362">03391/3469362</a></p>
+      <p>E-Mail: <a href="mailto:lava-restaurant@web.de">lava-restaurant@web.de</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- Mobile-Version -->
 <div class="mobile-container">
-  <!-- Logo -->
   <div class="logo-container">
     <img src="images/logo.png" alt="Restaurant Logo">
   </div>
 
-  <!-- Willkommenstext -->
   <div class="welcome-text">
-    <p>
-      Herzlich willkommen bei Restaurant Lava! Tauchen Sie ein in unsere exklusive kulinarische Welt, wo liebevoll zubereitete Speisen und gemütliches Ambiente auf Sie warten. Lassen Sie sich von unseren kreativen Gerichten begeistern und genießen Sie einen unvergesslichen Aufenthalt!
-    </p>
+    <p>Herzlich willkommen bei Restaurant Lava! Tauchen Sie ein in unsere exklusive kulinarische Welt, wo liebevoll zubereitete Speisen und gemütliches Ambiente auf Sie warten. Lassen Sie sich von unseren kreativen Gerichten begeistern und genießen Sie einen unvergesslichen Aufenthalt!</p>
   </div>
 
-  <!-- Downloadbereich Speisekarte -->
   <div class="download-section">
     <p class="download-text">
       <span class="arrow">▼</span> Hier geht es zur Speisekarte <span class="arrow">▼</span>
@@ -30,33 +93,28 @@
     </a>
   </div>
 
-  <!-- Öffnungszeiten -->
   <div class="section">
     <h2 class="section-title">Öffnungszeiten</h2>
     <p class="section-content"><strong>Montag, Mittwoch – Sonntag:</strong><br>11:30 – 14:30 &amp; 17:00 – 21:30 Uhr</p>
     <p class="section-content"><strong>Dienstag:</strong> Ruhetag</p>
   </div>
 
-  <!-- Standort -->
   <div class="section">
     <h2 class="section-title">Standort</h2>
-    <!-- Platzhalter für Adresse über Google Maps -->
     <p class="section-content address-placeholder">Regattastr. 14, 16816 Neuruppin</p>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 
-  <!-- Kontakt -->
   <div class="section">
     <h2 class="section-title">Kontakt</h2>
     <p class="section-content">Adresse: Regattastr. 14, 16816 Neuruppin</p>
-    <p class="section-content">Telefon: <a href="tel:03391/3469 362">03391/3469 362</a></p>
-    <p class="section-content">E-Mail: <a href="mailto:lava-restaurant@web.de">lava-restaurant@web.de </a></p>
+    <p class="section-content">Telefon: <a href="tel:03391/3469362">03391/3469362</a></p>
+    <p class="section-content">E-Mail: <a href="mailto:lava-restaurant@web.de">lava-restaurant@web.de</a></p>
   </div>
 </div>
+
 <footer class="site-footer">
   <div class="footer-container">
     <p class="footer-line">© 2025 Restaurant Lava</p>
@@ -67,5 +125,16 @@
     <p class="footer-line">designed by Daniel Henschel</p>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.desktop-nav li').forEach(li => {
+    li.addEventListener('click', ()=>{
+      document.querySelector('.desktop-nav .active').classList.remove('active');
+      li.classList.add('active');
+      document.querySelector('.desktop-tab-content.active').classList.remove('active');
+      document.getElementById(li.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

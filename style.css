@@ -7,13 +7,10 @@
     --color-red:         #993632;
     --color-deep-red:    #3a1314;
     --color-dark-brown:  #301011;
-    --color-black:       #000000;
     --color-bg-gradient: linear-gradient(135deg, var(--color-dark-brown), var(--color-red-orange));
 }
 
-/* ============================= */
-/* Grundlayout                   */
-/* ============================= */
+/* General */
 html, body {
     height: 100%;
     margin: 0;
@@ -27,37 +24,63 @@ body {
     color: var(--color-white);
 }
 
-.desktop-container { display: none; }   /* default nur Mobile */
-.mobile-container  { flex: 1; padding: 5vw; }
-
-/* ============================= */
-/* Logo                           */
-/* ============================= */
-.logo-container img {
-    width: 80vw;
-    max-width: 300px;
-    height: auto;
-}
-
-/* ============================= */
-/* Mobile-Welcome                 */
-/* ============================= */
-.mobile-container .welcome-text { margin: 8vw 0 12vw; }
-.mobile-container .welcome-text p {
-    font-size: clamp(20px,4.5vw,30px);
+/* Footer */
+.site-footer {
+    background: var(--color-dark-brown);
     color: var(--color-cream);
-    margin: 0;
+    padding: 3vw 5vw;
+    font-size: clamp(12px,3vw,16px);
+    border-top: 1px solid var(--color-red-orange);
+    margin-top: auto;
+}
+.footer-line { margin: .5vw 0; }
+.footer-links a { color: var(--color-orange); }
+.footer-links a:hover { color: var(--color-red); }
+
+/* Sections & Boxes */
+.section, .box {
+    margin: 8vw 5vw 0;
+    padding: 4vw;
+    background: rgba(255,255,255,.08);
+    border: 1px solid var(--color-cream);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+.section-title,
+.box h2 {
+    font-size: clamp(20px,4vw,28px);
+    color: var(--color-cream);
+    margin-bottom: 2vw;
+}
+.section-content,
+.box p {
+    font-size: clamp(14px,3.5vw,20px);
+    margin: 1vw 0;
+}
+.section-content a,
+.box a {
+    color: var(--color-orange);
+    text-decoration: none;
+}
+.section-content a:hover,
+.box a:hover { color: var(--color-red); }
+
+/* Google Maps */
+.map-container,
+.map-container-desktop iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
 }
 
-/* ============================= */
-/* Download-Bereich               */
-/* ============================= */
-.download-section { margin-top: 8vw; }
-
+/* Download Button */
 @keyframes subtleBounce {
     0%,100% { transform: translateY(0); }
     50%     { transform: translateY(-4px); }
 }
+.download-section { margin-top: 8vw; }
 .download-text {
     font-size: clamp(18px,4vw,26px);
     font-weight: 700;
@@ -65,7 +88,6 @@ body {
     animation: subtleBounce 2s infinite;
 }
 .arrow { font-size: clamp(20px,4vw,28px); }
-
 .download-button,
 .download-button-desktop {
     display: inline-block;
@@ -86,259 +108,253 @@ body {
     box-shadow: 0 6px 14px rgba(0,0,0,.3);
 }
 
+/* Logo */
+.logo-container img {
+    width: 80vw;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Mobile view */
+.desktop-container { display: none; }
+.mobile-container { flex: 1; padding: 5vw; }
+.mobile-container .welcome-text { margin: 8vw 0 12vw; }
+.mobile-container .welcome-text p {
+    font-size: clamp(20px,4.5vw,30px);
+    color: var(--color-cream);
+    margin: 0;
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+    .mobile-container { display: none; }
+    .desktop-container {
+        display: block;
+        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3vw;
+    }
+
+    /* Navigation */
+    .desktop-nav-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid var(--color-cream2);
+        margin-bottom: 2vw;
+        position: relative;
+    }
+    .desktop-nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .desktop-nav li {
+        position: relative;
+        margin: 0 2vw;
+        padding: 1vw 0;
+        font-size: clamp(16px,1.5vw,20px);
+        cursor: pointer;
+        color: var(--color-cream2);
+        transition: color .3s;
+    }
+    .desktop-nav li.active {
+        color: var(--color-orange);
+    }
+    .desktop-nav li.active::after {
+        content: '';
+        position: absolute;
+        left: 5%; right: 5%;
+        bottom: 9px;
+        height: 3px;
+        background: var(--color-orange);
+        border-radius: 2px;
+    }
+
+    /* Tab content */
+    .desktop-tab-content { display: none; }
+    .desktop-tab-content.active { display: block; }
+
+    /* Home */
+    .desktop-logo { margin-bottom: 2vw; }
+    .desktop-logo img { width: 30vw; max-width: 250px; }
+    .desktop-welcome h1 {
+        font-size: clamp(28px,3vw,40px);
+        color: var(--color-cream);
+        margin-bottom: 1vw;
+    }
+    .desktop-welcome p {
+        font-size: clamp(18px,2vw,24px);
+        line-height: 1.4;
+    }
+
+    /* Menu */
+    #menu .download-text { font-size: clamp(16px,1.2vw,18px); margin-bottom: 1vw; }
+    #menu .download-button {
+        padding: 1.8vw 4vw;
+        font-size: clamp(14px,1.2vw,18px);
+    }
+
+    /* Info boxes */
+    #hours .box,
+    #location .box,
+    #contact .box {
+        margin: 0 auto 2vw;
+        max-width: 600px;
+    }
+}
+
 /* ============================= */
-/* Sektionen & Boxen              */
+/* Impressum                      */
 /* ============================= */
-.section,
-.box {
-    margin: 8vw 5vw 0;
-    padding: 4vw;
+.impressum-header {
+    background: var(--color-dark-brown);
+    border-bottom: 1px solid var(--color-red-orange);
+    padding: 1vw;
+}
+.impressum-header h1 {
+    color: var(--color-cream);
+}
+
+.impressum-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+    padding: 5vw;
+}
+.impressum-section {
+    flex: 1 1 300px;
+    max-width: 400px;
     background: rgba(255,255,255,.08);
     border: 1px solid var(--color-cream);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
-}
-.section-title {
-    font-size: clamp(20px,4vw,28px);
-    color: var(--color-cream);
-    margin-bottom: 2vw;
-}
-.section-content,
-.box p {
-    font-size: clamp(14px,3.5vw,20px);
-    margin: 1vw 0;
-}
-.section-content a,
-.box a {
-    color: var(--color-orange);
-    text-decoration: none;
-}
-.section-content a:hover,
-.box a:hover { color: var(--color-red); }
-
-/* ============================= */
-/* Google-Maps                    */
-/* ============================= */
-.map-container { margin-top: 2vw; }
-.map-container iframe,
-.map-container-desktop iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.3);
-}
-
-/* ============================= */
-/* Footer                         */
-/* ============================= */
-.site-footer {
-    background: var(--color-dark-brown);
-    color: var(--color-cream);
-    padding: 3vw 5vw;
-    font-size: clamp(12px,3vw,16px);
-    border-top: 1px solid var(--color-red-orange);
-    margin-top: auto;
-}
-.footer-line { margin: .5vw 0; }
-.footer-links a { color: var(--color-orange); }
-.footer-links a:hover { color: var(--color-red); }
-
-/* ============================= */
-/* Desktop-Ansicht                */
-/* ============================= */
-@media (min-width: 1024px) {
-
-/* Container-Umschaltung */
-.mobile-container {
-    display: none;
-}
-/* Blendet die mobile Ansicht aus, sobald Desktop-Modus aktiv ist (ab 1024px Breite). */
-
-.desktop-container {
-    display: block;
-    flex: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 3vw;
-}
-/* Zeigt die Desktop-Version an und zentriert sie mit einer maximalen Breite von 1000px.
-   Flex: 1 bedeutet, sie dehnt sich aus, um den Platz zwischen Header und Footer zu füllen. */
-
-
-/* ───── Navigation ───── */
-.desktop-nav-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.desktop-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid var(--color-cream2);
-    padding: 0;
-    margin: 0 0 2vw 0;
-    position: relative;
-}
-.desktop-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-.desktop-nav li {
-    position: relative;                   /* Jedes Listenelement ist relativ, damit das Unterstrich-Pseudoelement darin platziert werden kann */
-    margin: 0 2vw;                        /* Horizontaler Abstand zwischen den Tabs */
-    padding: 1vw 0;                       /* Vertikaler Abstand um die Wörter herum */
-    font-size: clamp(16px,1.5vw,20px);     /* Schriftgröße flexibel abhängig von der Bildschirmbreite */
-    cursor: pointer;                      /* Zeigt bei Hover die Hand an (klickbar) */
-    color: var(--color-cream2);            /* Schriftfarbe im Normalzustand */
-    transition: color 0.3s;                /* Farbwechsel soll weich animiert werden */
-}
-
-.desktop-nav li.active {
-    color: var(--color-orange);
-}
-/* Markiert das aktive Listenelement orange (ändert nur die Schriftfarbe, noch kein Unterstrich hier). */
-
-/* Aktiver Unterstrich nur für aktives Element */
-.desktop-nav li.active::after {
-    content: '';                          /* Erstellt ein leeres Pseudoelement */
-    position: absolute;                   /* Platziert es absolut innerhalb des Listenelements */
-    left: 5%;
-    right: 5%;
-    bottom: 9px;                         /* Positioniert es knapp unterhalb des Textes, noch über dem Hauptstrich */
-    height: 3px;                          /* Höhe des aktiven kleinen Unterstrichs */
-    background-color: var(--color-orange);/* Farbe des aktiven Unterstrichs */
-    border-radius: 2px;                   /* Leicht abgerundete Ecken */
-}
-}
-
-/* ───── Tabs ───── */
-.desktop-tab-content { display: none; }
-.desktop-tab-content.active { display: block; }
-
-/* Home */
-.desktop-logo      { margin-bottom: 2vw; }
-.desktop-logo img  { width: 30vw; max-width: 250px; }
-.desktop-welcome h1 {
-    font-size: clamp(28px,3vw,40px);
-    margin-bottom: 1vw;
-    color: var(--color-cream);
-}
-.desktop-welcome p {
-    font-size: clamp(18px,2vw,24px);
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* Speisekarte-Tab */
-#menu .download-text {
-    font-size: clamp(16px,1.2vw,18px);
-    margin-bottom: 1vw;
-}
-#menu .download-button {
-    padding: 1.8vw 4vw;
-    font-size: clamp(14px,1.2vw,18px);
-}
-
-/* Boxen bei Hours/Location/Contact */
-#hours .box,
-#location .box,
-#contact .box {
-    margin: 0 auto 2vw;
-    max-width: 600px;
-}
-
-/* ============================= */
-/* Impressum: Header & Boxen fix */
-/* ============================= */
-
-/* 1. Header erneut einfärben und dünne Trennlinie */
-.impressum-header {
-    background-color: var(--color-dark-brown);      /* dunkler Hintergrund wie vorher */
-    border-bottom:   1px solid var(--color-red-orange); /* dünne orangene Linie */
-    padding:         1vw 1vw;                        /* etwas Innenabstand */
-}
-
-.impressum-header h1 {
-    color: var(--color-cream);                      /* Überschrift-Creme wie auf Hauptseite */
-}
-
-/* ============================= */
-/* Impressum: dynamische Box-Breite */
-/* ============================= */
-.impressum-main {
-    display: flex;
-    flex-wrap: wrap;             /* Zeilenumbruch, wenn nötig */
-    justify-content: center;     /* Items horizontal zentrieren */
-    gap: 5vw;                    /* Abstand zwischen den Boxen */
-    padding: 5vw;
-}
-
-.impressum-section {
-    flex: 1 1 300px;             /* flexibel, ideal bei mind. 300px */
-    max-width: 400px;            /* wächst nicht über 400px hinaus */
-    background: rgba(255,255,255,0.08);
-    border: 1px solid var(--color-cream);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     padding: 4vw;
 }
-
-/* 4. Links in Boxen: orange + hover rot */
 .impressum-section a {
     color: var(--color-orange);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color .2s;
 }
-.impressum-section a:hover {
-    color: var(--color-red);
-}
+.impressum-section a:hover { color: var(--color-red); }
 
-/* 5. Responsive: unter 1024px zentriert untereinander */
-@media (max-width: 1023px) {
-    .impressum-main {
-        flex-direction: column;
-        align-items: center;      /* Boxen zentriert */
-    }
-    .impressum-section {
-        width: 100%;
-        max-width: 600px;         /* begrenzt auf 600px */
-        flex: none;               /* kein flex mehr */
-    }
-}
-
-
-@media (max-width: 768px) {
-    .section,
-    .box,
-    .impressum-section {
-        margin: 8vw auto 0;
-        max-width: calc(100% - 10vw);
-    }
-}
-
-.section-title,
+/* Box titles */
 .impressum-section h2 {
+    font-size: clamp(18px,4vw,24px);
     color: var(--color-cream);
+    margin: 0 0 1.5vw;
+    padding-bottom: .5vw;
+    border-bottom: 1px solid var(--color-cream2);
 }
 
+/* Responsive */
+@media (max-width: 1023px) {
+    .impressum-main { flex-direction: column; align-items: center; }
+    .impressum-section { width: 100%; max-width: 600px; flex: none; }
+}
+@media (max-width: 768px) {
+    .impressum-section { margin: 8vw auto 0; max-width: calc(100% - 10vw); }
+}
+
+/* Disclaimer */
 .impressum-disclaimer {
-    color: var(--color-white);              /* Weißer Text */
-    text-align: center;                     /* Zentriert */
-    margin: 4vw 5vw;                        /* Abstand zu Boxen und Footer */
-    font-size: clamp(12px, 3vw, 16px);      /* Responsives Font-Scaling */
-    line-height: 1.4;                       /* Angenehme Zeilenhöhe */
+    color: var(--color-white);
+    text-align: center;
+    margin: 4vw 5vw;
+    font-size: clamp(12px,3vw,16px);
+    line-height: 1.4;
 }
-
-/* Falls du einen kleineren Viewport noch etwas mehr Platz geben willst */
 @media (max-width: 480px) {
     .impressum-disclaimer {
         margin: 3vw 4vw;
-        font-size: clamp(14px, 4vw, 18px);
+        font-size: clamp(14px,4vw,18px);
     }
+}
+
+/* ============================= */
+/* Datenschutzerklärung           */
+/* ============================= */
+.datenschutz-header {
+    background: var(--color-dark-brown);
+    border-bottom: 1px solid var(--color-red-orange);
+    padding: 1vw;
+}
+.datenschutz-header h1 {
+    color: var(--color-cream);
+    font-size: clamp(22px,5vw,32px);
+    margin: 0;
+}
+.datenschutz-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5vw 3vw;
+    color: var(--color-white);
+    line-height: 1.6;
+}
+.datenschutz-content > h1 {
+    font-size: clamp(28px,6vw,40px);
+    color: var(--color-cream);
+    margin-bottom: 1vw;
+}
+.datenschutz-content > p:first-of-type {
+    font-size: clamp(14px,3vw,18px);
+    color: var(--color-cream2);
+    margin: 0 0 2vw;
+}
+.datenschutz-content .index {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vw 2vw;
+    margin: 0 0 3vw;
+    padding: 0;
+}
+.datenschutz-content .index-link {
+    color: var(--color-orange);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-orange);
+    font-size: clamp(14px,3vw,18px);
+    transition: color .2s, border-color .2s;
+}
+.datenschutz-content .index-link:hover {
+    color: var(--color-red);
+    border-color: var(--color-red);
+}
+.datenschutz-content h2 {
+    font-size: clamp(22px,5vw,32px);
+    color: var(--color-cream);
+    margin: 3vw 0 1vw;
+    padding-bottom: .5vw;
+    border-bottom: 1px solid var(--color-cream2);
+}
+.datenschutz-content h3 {
+    font-size: clamp(18px,4vw,28px);
+    color: var(--color-cream);
+    margin: 2.5vw 0 .5vw;
+}
+.datenschutz-content p { margin: 1vw 0; }
+.datenschutz-content ul { margin: 1vw 0 2vw 1.5em; padding: 0; }
+.datenschutz-content ul.m-elements { margin: 1vw 0 2vw; }
+.datenschutz-content a {
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color .2s;
+}
+.datenschutz-content a:hover {
+    color: var(--color-red);
+    text-decoration: underline;
+}
+.datenschutz-content .seal {
+    margin-top: 4vw;
+    font-size: clamp(12px,3vw,16px);
+    color: var(--color-cream2);
+    text-align: center;
 }

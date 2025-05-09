@@ -237,6 +237,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
     padding: 4vw;
+    font-size: clamp(16px, 4vw, 22px);
 }
 .impressum-section a {
     color: var(--color-orange);

@@ -70,13 +70,13 @@ body {
 .map-container-desktop {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;     /* 16:9 Seitenverhältnis (9 / 16 = 0.5625) */
+    padding-top: 56.25%;
     overflow: hidden;
 }
 
 .map-container iframe,
 .map-container-desktop iframe {
-    position: absolute;      /* auf den Container positionieren */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

@@ -252,3 +252,93 @@ body {
     margin: 0 auto 2vw;
     max-width: 600px;
 }
+
+/* ============================= */
+/* Impressum: Header & Boxen fix */
+/* ============================= */
+
+/* 1. Header erneut einfärben und dünne Trennlinie */
+.impressum-header {
+    background-color: var(--color-dark-brown);      /* dunkler Hintergrund wie vorher */
+    border-bottom:   1px solid var(--color-red-orange); /* dünne orangene Linie */
+    padding:         1vw 1vw;                        /* etwas Innenabstand */
+}
+
+.impressum-header h1 {
+    color: var(--color-cream);                      /* Überschrift-Creme wie auf Hauptseite */
+}
+
+/* ============================= */
+/* Impressum: dynamische Box-Breite */
+/* ============================= */
+.impressum-main {
+    display: flex;
+    flex-wrap: wrap;             /* Zeilenumbruch, wenn nötig */
+    justify-content: center;     /* Items horizontal zentrieren */
+    gap: 5vw;                    /* Abstand zwischen den Boxen */
+    padding: 5vw;
+}
+
+.impressum-section {
+    flex: 1 1 300px;             /* flexibel, ideal bei mind. 300px */
+    max-width: 400px;            /* wächst nicht über 400px hinaus */
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--color-cream);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 4vw;
+}
+
+/* 4. Links in Boxen: orange + hover rot */
+.impressum-section a {
+    color: var(--color-orange);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.impressum-section a:hover {
+    color: var(--color-red);
+}
+
+/* 5. Responsive: unter 1024px zentriert untereinander */
+@media (max-width: 1023px) {
+    .impressum-main {
+        flex-direction: column;
+        align-items: center;      /* Boxen zentriert */
+    }
+    .impressum-section {
+        width: 100%;
+        max-width: 600px;         /* begrenzt auf 600px */
+        flex: none;               /* kein flex mehr */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .section,
+    .box,
+    .impressum-section {
+        margin: 8vw auto 0;
+        max-width: calc(100% - 10vw);
+    }
+}
+
+.section-title,
+.impressum-section h2 {
+    color: var(--color-cream);
+}
+
+.impressum-disclaimer {
+    color: var(--color-white);              /* Weißer Text */
+    text-align: center;                     /* Zentriert */
+    margin: 4vw 5vw;                        /* Abstand zu Boxen und Footer */
+    font-size: clamp(12px, 3vw, 16px);      /* Responsives Font-Scaling */
+    line-height: 1.4;                       /* Angenehme Zeilenhöhe */
+}
+
+/* Falls du einen kleineren Viewport noch etwas mehr Platz geben willst */
+@media (max-width: 480px) {
+    .impressum-disclaimer {
+        margin: 3vw 4vw;
+        font-size: clamp(14px, 4vw, 18px);
+    }
+}

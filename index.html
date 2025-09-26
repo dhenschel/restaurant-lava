@@ -4,26 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Lava</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
+<input type="checkbox" id="holiday-notice-dismissed" class="holiday-modal__state" hidden>
+
+<div class="holiday-modal" role="dialog" aria-modal="true" aria-label="Restaurant vom 29.9 bis 15.10 vorübergehend geschlossen" tabindex="-1">
+  <label for="holiday-notice-dismissed" class="holiday-modal__backdrop" aria-hidden="true"></label>
+  <div class="holiday-modal__dialog" role="document">
+    <label for="holiday-notice-dismissed" class="holiday-modal__close" role="button" aria-label="Hinweis schließen" tabindex="0">
+      <span aria-hidden="true">&times;</span>
+    </label>
+    <img src="images/betriebsferien-1000x1600.jpg" alt="Betriebsferien – Restaurant vorübergehend geschlossen" class="holiday-modal__image" loading="eager">
+  </div>
+</div>
+
+<div class="page-wrapper">
+
 <!-- Desktop-Version -->
 <div class="desktop-container">
+  <input type="radio" name="desktop-tab" id="desktop-tab-home" class="desktop-tab-toggle" checked>
+  <input type="radio" name="desktop-tab" id="desktop-tab-menu" class="desktop-tab-toggle">
+  <input type="radio" name="desktop-tab" id="desktop-tab-hours" class="desktop-tab-toggle">
+  <input type="radio" name="desktop-tab" id="desktop-tab-location" class="desktop-tab-toggle">
+  <input type="radio" name="desktop-tab" id="desktop-tab-contact" class="desktop-tab-toggle">
   <div class="desktop-nav-wrapper">
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" role="tablist" aria-label="Bereiche der Desktop-Seite">
       <ul>
-        <li class="active" data-tab="home">Home</li>
-        <li data-tab="menu">Speisekarte</li>
-        <li data-tab="hours">Öffnungszeiten</li>
-        <li data-tab="location">Standort</li>
-        <li data-tab="contact">Kontakt</li>
+        <li><label id="desktop-tab-label-home" for="desktop-tab-home" role="button" tabindex="0" aria-controls="home">Home</label></li>
+        <li><label id="desktop-tab-label-menu" for="desktop-tab-menu" role="button" tabindex="0" aria-controls="menu">Speisekarte</label></li>
+        <li><label id="desktop-tab-label-hours" for="desktop-tab-hours" role="button" tabindex="0" aria-controls="hours">Öffnungszeiten</label></li>
+        <li><label id="desktop-tab-label-location" for="desktop-tab-location" role="button" tabindex="0" aria-controls="location">Standort</label></li>
+        <li><label id="desktop-tab-label-contact" for="desktop-tab-contact" role="button" tabindex="0" aria-controls="contact">Kontakt</label></li>
       </ul>
     </nav>
   </div>
 
   <!-- Home Tab -->
-  <section id="home" class="desktop-tab-content active">
+  <section id="home" class="desktop-tab-content desktop-tab-content--home" role="tabpanel" aria-labelledby="desktop-tab-label-home">
     <div class="logo-container desktop-logo">
       <img src="images/logo.png" alt="Restaurant Logo">
     </div>
@@ -34,7 +53,7 @@
   </section>
 
   <!-- Speisekarte Tab -->
-  <section id="menu" class="desktop-tab-content">
+  <section id="menu" class="desktop-tab-content desktop-tab-content--menu" role="tabpanel" aria-labelledby="desktop-tab-label-menu">
     <div class="download-section">
       <p class="download-text">
         <span class="arrow">▼</span> Hier geht es zur Speisekarte <span class="arrow">▼</span>
@@ -46,7 +65,7 @@
   </section>
 
   <!-- Öffnungszeiten Tab -->
-  <section id="hours" class="desktop-tab-content">
+  <section id="hours" class="desktop-tab-content desktop-tab-content--hours" role="tabpanel" aria-labelledby="desktop-tab-label-hours">
     <div class="box">
       <p><strong>Montag, Mittwoch – Sonntag:</strong> 11:30 – 14:30 &amp; 17:00 – 21:30 Uhr</p>
       <p><strong>Dienstag:</strong> Ruhetag</p>
@@ -54,7 +73,7 @@
   </section>
 
   <!-- Standort Tab -->
-  <section id="location" class="desktop-tab-content">
+  <section id="location" class="desktop-tab-content desktop-tab-content--location" role="tabpanel" aria-labelledby="desktop-tab-label-location">
     <div class="box">
       <p>Regattastr. 14, 16816 Neuruppin</p>
       <div class="map-container-desktop">
@@ -65,7 +84,7 @@
   </section>
 
   <!-- Kontakt Tab -->
-  <section id="contact" class="desktop-tab-content">
+  <section id="contact" class="desktop-tab-content desktop-tab-content--contact" role="tabpanel" aria-labelledby="desktop-tab-label-contact">
     <div class="box">
       <p>Adresse: Regattastr. 14, 16816 Neuruppin</p>
       <p>Telefon: <a href="tel:03391/3469362">03391/3469362</a></p>
@@ -125,16 +144,6 @@
     <p class="footer-line">designed by Daniel Henschel</p>
   </div>
 </footer>
-
-<script>
-  document.querySelectorAll('.desktop-nav li').forEach(li => {
-    li.addEventListener('click', ()=>{
-      document.querySelector('.desktop-nav .active').classList.remove('active');
-      li.classList.add('active');
-      document.querySelector('.desktop-tab-content.active').classList.remove('active');
-      document.getElementById(li.dataset.tab).classList.add('active');
-    });
-  });
-</script>
+</div>
 </body>
 </html>

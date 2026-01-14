@@ -2,11 +2,17 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Restaurant Lava in Neuruppin – exklusive Küche, gemütliches Ambiente. Speisekarte zum Download, Öffnungszeiten und Kontakt.">
+
+  <meta property="og:title" content="Restaurant Lava">
+  <meta property="og:description" content="Restaurant Lava in Neuruppin – Speisekarte, Öffnungszeiten, Standort & Kontakt.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.png">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Lava</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -44,6 +50,7 @@
       <a href="Speisekarte_LAVA_07_2025.pdf" class="download-button" download>
         Speisekarte herunterladen
       </a>
+      <p class="download-hint">(PDF, 844 KB)</p>
     </div>
   </section>
 
@@ -60,7 +67,7 @@
     <div class="box">
       <p>Regattastr. 14, 16816 Neuruppin</p>
       <div class="map-container-desktop">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde"
+        <iframe title="Google Maps Karte: Restaurant Lava, Regattastr. 14, Neuruppin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -93,6 +100,7 @@
     <a href="Speisekarte_LAVA_07_2025.pdf" class="download-button" download>
       Speisekarte herunterladen
     </a>
+    <p class="download-hint">(PDF, 844 KB)</p>
   </div>
 
   <div class="section">
@@ -105,7 +113,7 @@
     <h2 class="section-title">Standort</h2>
     <p class="section-content address-placeholder">Regattastr. 14, 16816 Neuruppin</p>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Google Maps Karte: Restaurant Lava, Regattastr. 14, Neuruppin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d300.70518467071525!2d12.808554472642712!3d52.918881347229444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a93da89fbde313%3A0x2d2f3f86a62da83a!2sRegattastra%C3%9Fe%2014%2C%2016816%20Neuruppin!5e0!3m2!1sde!2sde!4v1745270351526!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 
@@ -117,9 +125,17 @@
   </div>
 </div>
 
+<!-- Session-Popup (erscheint 1x pro Session) -->
+<div id="sessionModal" class="session-modal" aria-hidden="true">
+  <div class="session-modal__dialog" role="dialog" aria-modal="true" aria-label="Hinweis">
+    <button class="session-modal__close" type="button" aria-label="Schließen">×</button>
+    <img class="session-modal__img" src="images/Betriebsferien.jpeg" alt="Hinweis: Betriebsferien">
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="footer-container">
-    <p class="footer-line">© 2025 Restaurant Lava</p>
+    <p class="footer-line">© 2025-2026 Restaurant Lava</p>
     <p class="footer-line footer-links">
       <a href="impressum.html">Impressum</a> |
       <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
@@ -129,12 +145,59 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.desktop-nav li').forEach(li => {
-    li.addEventListener('click', ()=>{
-      document.querySelector('.desktop-nav .active').classList.remove('active');
-      li.classList.add('active');
-      document.querySelector('.desktop-tab-content.active').classList.remove('active');
-      document.getElementById(li.dataset.tab).classList.add('active');
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ---------------------------
+       Desktop Tabs (deine Navigation)
+    --------------------------- */
+    document.querySelectorAll('.desktop-nav li').forEach(li => {
+      li.setAttribute('role', 'button');
+      li.setAttribute('tabindex', '0');
+
+      const activate = () => {
+        document.querySelector('.desktop-nav .active').classList.remove('active');
+        li.classList.add('active');
+        document.querySelector('.desktop-tab-content.active').classList.remove('active');
+        document.getElementById(li.dataset.tab).classList.add('active');
+      };
+
+      li.addEventListener('click', activate);
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+      });
+    });
+
+    /* ---------------------------
+       Popup (erscheint bei jedem Seitenladen)
+    --------------------------- */
+    const modal = document.getElementById('sessionModal');
+    const closeBtn = modal.querySelector('.session-modal__close');
+
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // -> Jedes Mal anzeigen, wenn die Seite geladen wird (auch bei Reload)
+    openModal();
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
   });
 </script>

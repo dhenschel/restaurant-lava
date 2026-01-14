@@ -120,6 +120,13 @@ body {
     box-shadow: 0 6px 14px rgba(0,0,0,.3);
 }
 
+.download-hint {
+    margin: 1.2vw 0 0;
+    font-size: clamp(12px, 2.8vw, 14px);
+    color: var(--color-cream2);
+    opacity: 0.9;
+}
+
 /* Logo */
 .logo-container img {
     width: 80vw;
@@ -370,4 +377,61 @@ body {
     font-size: clamp(12px,3vw,16px);
     color: var(--color-cream2);
     text-align: center;
+}
+
+/* ============================= */
+/* Session-Popup (Modal)         */
+/* ============================= */
+.session-modal {
+    position: fixed;
+    inset: 0;
+    display: none;              /* standardmäßig aus */
+    align-items: center;
+    justify-content: center;
+    padding: 4vw;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+}
+
+.session-modal.is-open {
+    display: flex;
+}
+
+.session-modal__dialog {
+    position: relative;
+    max-width: min(900px, 92vw);
+    max-height: 92vh;
+}
+
+.session-modal__img {
+    width: 100%;
+    height: auto;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+}
+
+.session-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 28px;
+    line-height: 44px;
+}
+
+.session-modal__close:hover {
+    transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
 }

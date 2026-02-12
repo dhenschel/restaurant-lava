@@ -187,8 +187,12 @@
       document.body.style.overflow = '';
     }
 
+    //Betriebsferien-Popup aktivieren/deaktivieren:
+    const SHOW_POPUP = false;
     // -> Jedes Mal anzeigen, wenn die Seite geladen wird (auch bei Reload)
-    openModal();
+    if (SHOW_POPUP) {
+      openModal();
+    }
 
     closeBtn.addEventListener('click', closeModal);
 

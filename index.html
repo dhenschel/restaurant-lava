@@ -197,11 +197,11 @@
   </div>
 </div>
 
-<!-- Session-Popup (erscheint 1x pro Session) -->
+<!-- Hinweis auf die Betriebsferien 2026 -->
 <div id="sessionModal" class="session-modal" aria-hidden="true">
-  <div class="session-modal__dialog" role="dialog" aria-modal="true" aria-label="Hinweis">
+  <div class="session-modal__dialog" role="dialog" aria-modal="true" aria-label="Betriebsferien vom 27. September bis 15. Oktober 2026">
     <button class="session-modal__close" type="button" aria-label="Schließen">×</button>
-    <img class="session-modal__img" src="images/Betriebsferien.jpeg" alt="Hinweis: Betriebsferien">
+    <img class="session-modal__img" src="images/Betriebsferien-2026.png" alt="Wir haben Betriebsferien vom 27. September bis 15. Oktober 2026. Ab dem 16. Oktober 2026 sind wir wieder für Sie da!">
   </div>
 </div>
 
@@ -261,7 +261,7 @@
     });
 
     /* ---------------------------
-       Popup (erscheint bei jedem Seitenladen)
+       Betriebsferien-Popup (erscheint bei jedem Seitenladen bis zum 15.10.2026)
     --------------------------- */
     const modal = document.getElementById('sessionModal');
     const closeBtn = modal.querySelector('.session-modal__close');
@@ -278,9 +278,8 @@
       document.body.style.overflow = '';
     }
 
-    //Betriebsferien-Popup aktivieren/deaktivieren:
-    const SHOW_POPUP = false;
-    // -> Jedes Mal anzeigen, wenn die Seite geladen wird (auch bei Reload)
+    // 16.10.2026, 00:00 Uhr in Neuruppin (MESZ): Hinweis automatisch beenden.
+    const SHOW_POPUP = Date.now() < new Date('2026-10-16T00:00:00+02:00').getTime();
     if (SHOW_POPUP) {
       openModal();
     }
